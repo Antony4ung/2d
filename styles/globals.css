@@ -13,7 +13,7 @@ a {
 
 * {
   box-sizing: border-box;
-  font-family: 'Roboto Flex', sans-serif!important;
+  font-family: 'Montserrat', sans-serif!important;
 }
 
 @media (prefers-color-scheme: dark) {

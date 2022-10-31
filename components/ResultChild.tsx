@@ -84,7 +84,14 @@ const ResultChild = ({ item }: any) => {
           >
             {item.twod}
           </Typography> */}
-          <Button variant="contained">{item.twod}</Button>
+          <Button variant="contained">
+          <Typography
+            sx={{}}
+            variant="h6"
+          >
+            {item.twod}
+          </Typography>
+          </Button>
         </Box>
       </Box>
     </>

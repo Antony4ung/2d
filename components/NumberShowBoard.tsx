@@ -36,12 +36,28 @@ export default function NumberShowBoard() {
           }}
         >
           <motion.div
-            initial={{ y: 50, opacity: 0 }}
-            transition={{ ease: "easeInOut", duration: 1 }}
-            animate={{ y: 0, opacity: 1 }}
-            exit={{ y: -50, opacity: 0 }}
+            // initial={{ y: 50, opacity: 0 }}
+            // transition={{ ease: "easeInOut", duration: 1 }}
+            // animate={{ y: 0, opacity: 1 }}
+            // exit={{ y: -50, opacity: 0 }}
+            key={data?.live.twod}
+            initial="hidden"
+            animate="visible"
+            exit={'exit'}
+            variants={{
+              hidden: {
+                y: 30,
+                opacity: 0,
+              },
+              visible: {
+                y: 0,
+                opacity: 1,
+              },
+              exit:{ y: -30, opacity: 0 }
+            }}
+            transition={{ delay: 1, type: 'spring' }}
           >
-            <Typography variant="h1" gutterBottom>
+            <Typography sx={{fontWeight:'bold'}} variant="h1">
               {data.live.twod}
             </Typography>
           </motion.div>

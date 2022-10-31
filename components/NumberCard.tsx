@@ -59,7 +59,7 @@ const NumberCard = ({ time, set, value, twod }: AMPMCard) => {
               >
                 value
               </Typography>
-              <Typography variant="subtitle1" gutterBottom>
+              <Typography variant="subtitle1">
                 {value}
               </Typography>
             </Box>
@@ -106,7 +106,11 @@ const NumberCard = ({ time, set, value, twod }: AMPMCard) => {
               {}
             </Typography> */}
 
-              <Button variant="contained">{twod}</Button>
+              <Button variant="contained">
+                <Typography sx={{}} variant="h6">
+                  {twod}
+                </Typography>
+              </Button>
             </Box>
           </Box>
         </CardContent>

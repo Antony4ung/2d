@@ -1,4 +1,10 @@
-import { Box, Container, Typography, useTheme } from "@mui/material";
+import {
+  Box,
+  Container,
+  Typography,
+  useTheme,
+} from "@mui/material";
+import { setRevalidateHeaders } from "next/dist/server/send-payload";
 import { useRouter } from "next/router";
 import React, { useEffect } from "react";
 import HistoryNumberSHow from "../components/HistoryDataShow";
@@ -18,23 +24,40 @@ const History = () => {
 
   const dispatch = useAppDispatch();
 
-  const FetchtwoDResult = () => {
+  const fetchLive = () => {
     dispatch<any>(liveResultFetch());
   };
 
   const fetchHistory = () => {
     dispatch<any>(hsitoryFetch());
-  }
+  };
+
+  // useEffect(() => {
+  //   fetchHistory();
+  //   fetchLive();
+  // }, []);
 
   useEffect(() => {
-    fetchHistory()
-    FetchtwoDResult();
+    if (!liveResult || !historyData) {
+      fetchLive();
+      fetchHistory();
+    }
+
+    const setInt = setInterval(() => {
+      fetchHistory();
+      fetchLive();
+    }, 7000);
+
+    return () => clearInterval(setInt);
+
+    
   }, []);
 
   return (
     <>
       {historyData && liveResult ? (
         <Box sx={{ display: "flex", justifyContent: "center", py: 5 }}>
+          
           <Container>
             <Typography
               align="center"

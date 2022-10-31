@@ -6,6 +6,7 @@ import Typography from "@mui/material/Typography";
 import DoneIcon from "@mui/icons-material/Done";
 import { useTheme } from "@mui/material/styles";
 import { useAppSelector } from "../redux/hooks";
+import { motion } from "framer-motion";
 
 export default function HistoryNumberSHow() {
   const theme = useTheme();
@@ -23,9 +24,32 @@ export default function HistoryNumberSHow() {
           flexDirection: "column",
         }}
       >
-        <Typography variant="h1" gutterBottom>
-          {data.live.twod}
-        </Typography>
+        <motion.div
+          // initial={{ y: 50, opacity: 0 }}
+          // transition={{ ease: "easeInOut", duration: 1 }}
+          // animate={{ y: 0, opacity: 1 }}
+          // exit={{ y: -50, opacity: 0 }}
+          key={data?.live.twod}
+          initial="hidden"
+          animate="visible"
+          exit={"exit"}
+          variants={{
+            hidden: {
+              y: 30,
+              opacity: 0,
+            },
+            visible: {
+              y: 0,
+              opacity: 1,
+            },
+            exit: { y: -30, opacity: 0 },
+          }}
+          transition={{ delay: 1, type: "spring" }}
+        >
+          <Typography sx={{ fontWeight: "bold" }} variant="h1" gutterBottom>
+            {data.live.twod}
+          </Typography>
+        </motion.div>
         <Box
           sx={{
             display: "flex",

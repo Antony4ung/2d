@@ -6,7 +6,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import { Button, useTheme } from '@mui/material';
+import { Button, Typography, useTheme } from '@mui/material';
 
 export default function DenseTable({data}:any) {
 
@@ -36,7 +36,9 @@ export default function DenseTable({data}:any) {
               <TableCell align="center">{row.value}</TableCell>
               <TableCell sx={{fontSize:20,color:theme.palette.warning.dark}} align="center">
                 <Button variant="contained">
+                <Typography sx={{ fontWeight: "bold" }} variant="h6">
                     {row.twod}
+                  </Typography>
                 </Button>
               </TableCell>
             </TableRow>

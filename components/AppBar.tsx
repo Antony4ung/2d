@@ -53,7 +53,7 @@ export default function HideAppBar(props: Props) {
     <React.Fragment>
       <CssBaseline />
       <HideOnScroll {...props}>
-        <AppBar >
+        <AppBar>
           <Toolbar
             sx={{
               alignItems: "center",
@@ -63,36 +63,42 @@ export default function HideAppBar(props: Props) {
             }}
             variant="dense"
           >
-            <Box
-              onClick={() => router.push("/")}
-              sx={{ display: "flex", alignItems: "center", cursor: "pointer" }}
-            >
-              <Image
-                style={{ marginRight: "10px" }}
-                width={20}
-                height={20}
-                alt="logo"
-                src={"/images/logo.png"}
-              />
-              <Typography sx={{}} variant="h6" color={'white'}>
-                Myanmar 2D live
-              </Typography>
-            </Box>
-            <Box sx={{ display: "flex", alignItems: "center" }}>
-              <Tooltip
-                onClick={() => router.push("/information")}
-                title="အကြောင်းအရာ"
+            <Tooltip title="home">
+              <Box
+                onClick={() => router.push("/")}
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  cursor: "pointer",
+                }}
               >
+                <Image
+                  style={{ marginRight: "10px" }}
+                  width={20}
+                  height={20}
+                  alt="logo"
+                  src={"/images/logo.png"}
+                />
+                <Typography
+                  sx={{ fontWeight: "bold" }}
+                  variant="h6"
+                  color={"white"}
+                >
+                  2D live
+                </Typography>
+
                 <IconButton color="primary" sx={{ mr: { md: 2 } }}>
                   <Image
                     style={{}}
                     width={20}
                     height={20}
                     alt="logo"
-                    src={"/images/information.png"}
+                    src={"/images/home.png"}
                   />
                 </IconButton>
-              </Tooltip>
+              </Box>
+            </Tooltip>
+            <Box sx={{ display: "flex", alignItems: "center" }}>
               <Tooltip
                 onClick={() => router.push("/results")}
                 title="2D ရလဒ်များ"
@@ -118,6 +124,20 @@ export default function HideAppBar(props: Props) {
                     height={20}
                     alt="logo"
                     src={"/images/history.png"}
+                  />
+                </IconButton>
+              </Tooltip>
+              <Tooltip
+                onClick={() => router.push("/information")}
+                title="အကြောင်းအရာ"
+              >
+                <IconButton color="primary" sx={{ mr: { md: 2 } }}>
+                  <Image
+                    style={{}}
+                    width={20}
+                    height={20}
+                    alt="logo"
+                    src={"/images/information.png"}
                   />
                 </IconButton>
               </Tooltip>

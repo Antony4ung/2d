@@ -18,7 +18,7 @@ const MainContainer = () => {
       <Grid sx={{ display: "flex", justifyContent: "center" }} item xs={12}>
         {data?.server_time && (
           <Typography variant="body2" gutterBottom>
-            ယခုအချိန် - {moment(data?.server_time).format("MMMM Do YYYY, h:mm:ss a")}
+            ယခုအချိန် - {moment(data?.server_time).format("MMMM Do YYYY, h:mm a")}
           </Typography>
         )}
       </Grid>

@@ -18,14 +18,14 @@ export default function Index() {
 
   useEffect(() => {
     if (!data) {
-      return fetchResult();
-    }else{
-      const setInt = setInterval(() => {
-        fetchResult();
-      }, 5000);
-  
-      return () => clearInterval(setInt);
+      fetchResult();
     }
+
+    const setInt = setInterval(() => {
+      fetchResult();
+    }, 5000);
+
+    return () => clearInterval(setInt);
 
     
   }, []);
