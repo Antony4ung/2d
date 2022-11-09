@@ -8,13 +8,13 @@ const ResultChild = ({ item }: any) => {
     <>
       <Typography
         align="center"
-        sx={{ fontWeight: "bold",mb:1,mt:3 }}
+        sx={{ fontWeight: "bold", mb: 1, mt: 3 }}
         color="text.primary"
         gutterBottom
       >
         {item.time}
       </Typography>
-      <Divider sx={{ }} />
+      <Divider sx={{}} />
 
       <Box
         sx={{
@@ -77,21 +77,20 @@ const ResultChild = ({ item }: any) => {
             2D
           </Typography>
 
-          {/* <Typography
-            style={{ color: theme.palette.warning.dark }}
-            variant="h6"
-            gutterBottom
-          >
-            {item.twod}
-          </Typography> */}
-          <Button variant="contained">
-          <Typography
-            sx={{}}
-            variant="h6"
-          >
-            {item.twod}
-          </Typography>
-          </Button>
+          {
+            <Typography
+              style={{
+                color:
+                  item.time === "12:00:00" || item.time === "16:30:00"
+                    ? theme.palette.warning.dark
+                    : theme.palette.text.primary
+              }}
+              variant="h6"
+              gutterBottom
+            >
+              {item.twod}
+            </Typography>
+          }
         </Box>
       </Box>
     </>
