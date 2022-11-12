@@ -4,12 +4,9 @@ import {
   Typography,
   useTheme,
 } from "@mui/material";
-import { setRevalidateHeaders } from "next/dist/server/send-payload";
-import { useRouter } from "next/router";
 import React, { useEffect } from "react";
 import HistoryNumberSHow from "../components/HistoryDataShow";
 import HostoryDataTable from "../components/HistoryDataTable";
-import HistoryTable from "../components/HistoryTable";
 import RenderLoader from "../components/RenderLoader";
 import { hsitoryFetch, liveResultFetch } from "../redux/actions";
 import { useAppDispatch, useAppSelector } from "../redux/hooks";

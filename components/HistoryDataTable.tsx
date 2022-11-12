@@ -50,15 +50,8 @@ export default function HostoryDataTable({data}:any) {
   const theme = useTheme()
   return (
     <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 700 }} aria-label="customized table">
+      <Table sx={{width:"100%" }} size="small" aria-label="customized table">
         <TableHead>
-          {/* <TableRow>
-            <StyledTableCell>Dessert (100g serving)</StyledTableCell>
-            <StyledTableCell align="right">Calories</StyledTableCell>
-            <StyledTableCell align="right">Fat&nbsp;(g)</StyledTableCell>
-            <StyledTableCell align="right">Carbs&nbsp;(g)</StyledTableCell>
-            <StyledTableCell align="right">Protein&nbsp;(g)</StyledTableCell>
-          </TableRow> */}
           <TableRow>
             <StyledTableCell align="center">Time</StyledTableCell>
             <StyledTableCell align="center">Set</StyledTableCell>
@@ -67,17 +60,6 @@ export default function HostoryDataTable({data}:any) {
           </TableRow>
         </TableHead>
         <TableBody>
-          {/* {rows.map((row) => (
-            <StyledTableRow key={row.name}>
-              <StyledTableCell component="th" scope="row">
-                {row.name}
-              </StyledTableCell>
-              <StyledTableCell align="right">{row.calories}</StyledTableCell>
-              <StyledTableCell align="right">{row.fat}</StyledTableCell>
-              <StyledTableCell align="right">{row.carbs}</StyledTableCell>
-              <StyledTableCell align="right">{row.protein}</StyledTableCell>
-            </StyledTableRow>
-          ))} */}
            {data[0]?.child.map((row:any,index:number) => (
             <StyledTableRow
               key={index}
@@ -89,8 +71,8 @@ export default function HostoryDataTable({data}:any) {
               <StyledTableCell align="center">{row.set}</StyledTableCell>
               <StyledTableCell align="center">{row.value}</StyledTableCell>
               <StyledTableCell sx={{fontSize:20,color:theme.palette.warning.dark}} align="center">
-                <Button variant="contained">
-                <Typography sx={{ fontWeight: "bold" }} variant="h6">
+                <Button size='small' variant="contained">
+                <Typography sx={{ fontWeight: "bold" }} variant="body1">
                     {row.twod}
                   </Typography>
                 </Button>
